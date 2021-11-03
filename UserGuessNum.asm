@@ -1,9 +1,9 @@
-# UserGuessNum generates a random integer and asks the user to repeatedly guess the integer that was
-# generated, printing out "too high" or "too low" appropriately to give the user feedback on each of
-# their guesses
+# UserGuessNum generates a random integer between 0 and 500, inclusive, and asks the user to
+# repeatedly guess the integer that was generated, printing out "too high" or "too low"
+# appropriately to give the user feedback on each of their guesses
 #
 # @author Rohan Thakur
-# @version 11/2/21
+# @version 11/3/21
     .data
 guessQuestion:  .asciiz "What is your integer guess between 0 and 500, inclusive? "
 tooHigh:    .asciiz "Too high\n"
