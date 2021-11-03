@@ -1,9 +1,10 @@
 # PrintRange prints out each integer in a range where the lower bound, upper bound, and step amount
 # are taken in as input from the user and are all integers
+#
 # @author Rohan Thakur
 # @version 10/29/21
     .data
-        newLine:    .asciiz "\n"
+newLine:    .asciiz "\n"
     .text
     .globl main
 main:

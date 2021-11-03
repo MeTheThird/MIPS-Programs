@@ -1,10 +1,11 @@
 # EvenOdd takes in an integer as user input and prints Even if the input integer is even, printing
 # Odd otherwise
+#
 # @author Rohan Thakur
 # @version 10/27/21
     .data
-        oddMsg:     .asciiz "Odd"
-        evenMsg:    .asciiz "Even"
+oddMsg:     .asciiz "Odd"
+evenMsg:    .asciiz "Even"
     .text
     .globl main
 main:
