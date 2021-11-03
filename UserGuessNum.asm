@@ -5,15 +5,16 @@
 # @author Rohan Thakur
 # @version 11/2/21
     .data
-guessQuestion:  .asciiz "What is your integer guess? "
+guessQuestion:  .asciiz "What is your integer guess between 0 and 500, inclusive? "
 tooHigh:    .asciiz "Too high\n"
 tooLow:     .asciiz "Too low\n"
 success:     .asciiz "Success!\n"
     .text
     .globl main
 main:
-    # generates and stores a random number
-    li $v0, 41
+    # generates and stores a random number between 0 and 500, inclusive
+    li $a1, 501
+    li $v0, 42
     syscall
     move $t0, $a0
 
