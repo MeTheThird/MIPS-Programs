@@ -25,6 +25,7 @@ main:
     li $t1, 500
 
 guess:
+    # guesses the midpoint of the valid range for the user's number
     addu $t2, $t0, $t1
     div $t2, $t2, 2
     li $v0, 4
@@ -33,14 +34,19 @@ guess:
     li $v0, 1
     move $a0, $t2
     syscall
+
+    # gets feedback on the guess from the user
     li $v0, 4
     la $a0, getFeedbackPrompt
     syscall
     li $v0, 5
     syscall
 
+    # ends the program if the guess was correct
     beq $v0, 2, endProgram
 
+    # updates the valid range for the user's number based on the feedback on the guess before
+    # guessing again
     beq $v0, 1, hi
     addu $t2, $t2, 1
     move $t0, $t2
@@ -49,10 +55,13 @@ hi:
     subu $t2, $t2, 1
     move $t1, $t2
     j guess
+
 endProgram:
+    # prints the success message
     li $v0, 4
     la $a0, successMsg
     syscall
 
+    # normal program termination
     li $v0, 10
     syscall
