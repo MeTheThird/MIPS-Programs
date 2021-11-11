@@ -2,13 +2,19 @@
 # Odd otherwise
 #
 # @author Rohan Thakur
-# @version 10/27/21
+# @version 11/10/21
     .data
+initialPrompt:  .asciiz "Enter an integer, and I will tell you its parity: "
 oddMsg:     .asciiz "Odd"
 evenMsg:    .asciiz "Even"
     .text
     .globl main
 main:
+    # prompts the user for an integer
+    li $v0, 4
+    la $a0, initialPrompt
+    syscall
+
     # takes in the integer as user input
     li $v0, 5
     syscall
