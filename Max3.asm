@@ -1,5 +1,5 @@
-# Max3 takes in three integers from the user and returns the value of the greatest integer via the
-# use of subroutines
+# Max3 takes in three integers from the user and prints out the value of the greatest integer via
+# the use of subroutines
 #
 # @author Rohan Thakur
 # @version 11/30/21
@@ -11,7 +11,7 @@ newLine:    .asciiz "\n"
     .text
     .globl main
 main:
-    # asks the user for the first integer and saves it
+    # asks the user for the first integer and saves it as an argument
     li $v0, 4
     la $a0, prompt0
     syscall
@@ -19,7 +19,7 @@ main:
     syscall
     move $a1, $v0
 
-    # asks the user for the second integer and saves it
+    # asks the user for the second integer and saves it as an argument
     li $v0, 4
     la $a0, prompt1
     syscall
@@ -27,7 +27,7 @@ main:
     syscall
     move $a2, $v0
 
-    # asks the user for the third integer and saves it
+    # asks the user for the third integer and saves it as an argument
     li $v0, 4
     la $a0, prompt2
     syscall
